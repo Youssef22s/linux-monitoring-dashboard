@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Monitor Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <main class="dashboard-wrapper">
+    <header class="glass-card header-card">
+      <div class="host-details">
+        <div class="server-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/>
+            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+        </div>
+
+        <div>
+          <span class="label">Server Hostname</span>
+          <h1 id="hostname">--</h1>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <div class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span id="status-badge">--</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="uptime-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span id="uptime">--</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="metrics-grid">
+      <div class="glass-card metric-card">
+        <div class="metric-info">
+          <span class="metric-title">CPU Load</span>
+          <span class="metric-value" id="cpu-val">0%</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill cpu-fill" id="cpu-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="glass-card metric-card">
+        <div class="metric-info">
+          <span class="metric-title">Memory Usage</span>
+          <span class="metric-value" id="memory-val">0%</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill memory-fill" id="memory-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="glass-card metric-card">
+        <div class="metric-info">
+          <span class="metric-title">Storage Disk</span>
+          <span class="metric-value" id="disk-val">0%</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill disk-fill" id="disk-bar" style="width: 0%"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div class="glass-card stat-card">
+        <div class="stat-icon">⚡</div>
+
+        <div class="stat-content">
+          <span class="stat-label">Active Processes</span>
+          <span class="stat-number" id="processes-val">--</span>
+        </div>
+      </div>
+
+      <div class="glass-card stat-card">
+        <div class="stat-icon">🌐</div>
+
+        <div class="stat-content">
+          <span class="stat-label">IP Address</span>
+          <span class="stat-number code" id="ip-val">--</span>
+        </div>
+      </div>
+
+      <div class="glass-card stat-card">
+        <div class="stat-icon">🔒</div>
+
+        <div class="stat-content">
+          <span class="stat-label">SSH Protocol</span>
+          <span class="stat-number" id="ssh-val">--</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
