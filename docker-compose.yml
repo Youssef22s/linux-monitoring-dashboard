@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  monitoring-dashboard:
+    build: .
+    container_name: dashboard-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - /proc:/proc:ro
+    uts: host
+    restart: unless-stopped
